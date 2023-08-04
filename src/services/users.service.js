@@ -4,11 +4,11 @@ const getAll = async () => {
     return await http.get("/Usuarios");
 };
 
-const login = async (username, password) => {
+const login = async (email, password) => {
 
     try {
-        const userByEmail = await http.get("/Auth/" + username);
-
+        const userByEmail = await http.get("/Auth/" + email);
+        
         if (userByEmail.data.contrasena !== password) {
             return { ok: false, message: "Usuario o contraseña incorrectos" };
         }

@@ -1,4 +1,6 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
+
 import Typography from '@mui/material/Typography';
 import Input from '@mui/material/Input';
 import FormControl from '@mui/material/FormControl';
@@ -12,6 +14,9 @@ import styles from './Login.module.css'
 import { userService } from '../../services/users.service';
 
 export const Login = () => {
+
+    const navigate = useNavigate();
+
 
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -41,7 +46,8 @@ export const Login = () => {
             setError(data.message);
         } else {
             setError(null);
-            alert('Bienvenido, estamos trabajando en el resto del sitio');
+            localStorage.setItem('user', JSON.stringify(data.user));
+            navigate('/home');
         }
 
     }
@@ -49,7 +55,7 @@ export const Login = () => {
     return (
         <div className={styles.formulario} >
             <Typography variant="h4" gutterBottom>
-                Iniciar Sesión
+                Inicio de Sesión
             </Typography>
 
             <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
