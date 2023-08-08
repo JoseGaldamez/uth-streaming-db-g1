@@ -1,0 +1,15 @@
+.formulario{
+    border: solid 1px #ccc;
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+    text-align: center;
+}
+
+.formulario h4{
+    margin-bottom: 20px;
+}
+
+.email{
+    margin-bottom: 10px;
+}
