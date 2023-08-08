@@ -3,6 +3,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router';
 
+import logoHNetflix from '../../images/logo-hnetflix.png'
+
 export const LogoPrincipal = () => {
 
     const navigate = useNavigate();
@@ -13,7 +15,6 @@ export const LogoPrincipal = () => {
 
     return (
         <>
-            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
             <Typography
                 variant="h6"
                 noWrap
@@ -29,7 +30,7 @@ export const LogoPrincipal = () => {
                     textDecoration: 'none',
                 }}
             >
-                HNetflix
+                <img src={logoHNetflix} alt="Logo" />
             </Typography>
         </>
     )

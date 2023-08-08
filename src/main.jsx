@@ -18,6 +18,7 @@ import './index.css'
 import { PublicPage } from './pages/PublicPage.jsx';
 import { PeliculasSubPage } from './subpages/PeliculasSubPage.jsx';
 import { HomeSubPage } from './subpages/HomeSubPage.jsx';
+import { SeriesSubPage } from './subpages/SeriesSubPage.jsx';
 
 
 const darkTheme = createTheme({
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/home/series",
-        element: <h1>Series</h1>,
+        element: <SeriesSubPage />,
       },
     ]
   },

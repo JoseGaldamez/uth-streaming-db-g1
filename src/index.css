@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: black !important;
+}
+
 .app-bar-top{
     padding: 0px 30px;
 }
@@ -22,6 +26,11 @@
 
 .logo-principal{
     cursor: pointer;
+    width: 150px;
+}
+
+.logo-principal img{
+    width: 100%;
 }
 
 .list-of-content{
@@ -75,4 +84,71 @@
 
 .see-all:hover{
     opacity: 1;
+}
+
+.top-swiper{
+    width: 100%;
+    max-height: 600px;
+    border-radius: 20px;
+    margin: 30px !important;
+    box-sizing: border-box;
+}
+
+.top-swiper .top-image-container{
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.top-swiper .top-image-container figure{
+    border-radius: 20px !important;
+    overflow: hidden;
+    width: calc(100% - 60px);
+    max-height: 600px;
+}
+
+.top-swiper .top-image-container figure img{
+    width: 100%;
+}
+
+
+.principa-section{
+    background-image: url(./images/fondo.jpg);
+    background-color: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    position: absolute;
+    z-index: 0;
+}
+
+.principa-section-content{
+    position: relative;
+    z-index: 1;
+}
+
+.top-nav{
+    background-color: rgba(0, 0, 0, 0.3);
+    max-height: 150px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav img{
+    width: 200px;
+}
+
+.top-nav button{
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 10px;
 }
