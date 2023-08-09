@@ -13,7 +13,6 @@ const getPeliculas = async (email, password) => {
     if (contenido.length === 0) {
         await getAll();
     }
-
     return await contenido.filter((peli) => peli.tipoContenido === "pelicula");
 };
 
@@ -22,12 +21,19 @@ const getSeries = async (nombre, email, password) => {
     if (contenido.length === 0) {
         await getAll();
     }
-
     return await contenido.filter((peli) => peli.tipoContenido === "serie");
+};
+
+const getContentById = async (id) => {
+    if (contenido.length === 0) {
+        await getAll();
+    }
+    return contenido.find((peli) => peli.idContenido == id);
 };
 
 export const contenidoService = {
     getAll,
     getPeliculas,
-    getSeries
+    getSeries,
+    getContentById
 }

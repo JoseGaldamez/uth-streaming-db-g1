@@ -19,6 +19,8 @@ import { PublicPage } from './pages/PublicPage.jsx';
 import { PeliculasSubPage } from './subpages/PeliculasSubPage.jsx';
 import { HomeSubPage } from './subpages/HomeSubPage.jsx';
 import { SeriesSubPage } from './subpages/SeriesSubPage.jsx';
+import { ContentSubPage } from './subpages/ContentSubPage.jsx';
+import { ErrorPage } from './pages/ErrorPage.jsx';
 
 
 const darkTheme = createTheme({
@@ -49,11 +51,16 @@ const router = createBrowserRouter([
         path: "/home/series",
         element: <SeriesSubPage />,
       },
+      {
+        path: "/home/content/:contentId",
+        element: <ContentSubPage />,
+      },
     ]
   },
   {
     path: "/",
     element: <PublicPage />,
+    errorElement: <ErrorPage />,
   }
 ]);
 

@@ -8,6 +8,10 @@ body{
     background-color: black !important;
 }
 
+li{
+    list-style: none;
+}
+
 .app-bar-top{
     padding: 0px 30px;
 }
@@ -114,7 +118,7 @@ body{
 .principa-section{
     background-image: url(./images/fondo.jpg);
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.2;
     width: 100%;
     height: 100vh;
     background-size: cover;
@@ -128,6 +132,8 @@ body{
 .principa-section-content{
     position: relative;
     z-index: 1;
+    width: 100%;
+    height: 100vh;
 }
 
 .top-nav{
@@ -151,4 +157,117 @@ body{
     font-size: 1.2rem;
     color: white;
     border-radius: 10px;
+}
+
+.principal-section-project-description{
+    width: 90%;
+    max-width: 600px;
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 20vh;
+}
+
+.principal-section-project-description h1{
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.principal-section-project-description h3{
+    color: white;
+    margin: 30px;
+    text-decoration: underline;
+}
+
+.planes-section-public{
+    width: 100%;
+    height: 100vh;
+}
+
+.planes{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.planes .list-of-planes{
+    display: flex;
+    width: 100%;
+    padding-top: 100px;
+    justify-content: center;
+}
+
+.container-item-plan{
+    background-color: #222;
+    max-width: 250px;
+    width: 250px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.container-item-plan .plan-title{
+    padding: 50px 0px;
+}
+
+.container-item-plan:nth-child(1) .plan-title{
+    background-color: #911919;
+}
+
+.container-item-plan:nth-child(2) .plan-title{
+    background-color: #1b6e1b;
+}
+
+.container-item-plan:nth-child(3) .plan-title{
+    background-color: #191991;
+}
+
+.plan-description{
+    padding: 30px 10px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.plan-description h4{
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.plan-precio{
+    padding: 30px 0px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.plan-precio h4{
+    color: #999;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #000;
+}
+
+.plan-precio p{
+    color: #999;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.plan-button{
+    padding: 10px 0px;
+    width: 90%;
+    margin: 20px auto;
+    background-color: rgb(121, 22, 22);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    border: solid 2px rgb(121, 22, 22);
+    transition: all 0.5s ease;
+}
+
+.plan-button:hover{
+    background-color: white;
+    color: red;
+    font-weight: bolder;
 }

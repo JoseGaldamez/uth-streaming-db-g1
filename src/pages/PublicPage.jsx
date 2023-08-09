@@ -1,6 +1,7 @@
 import React from 'react'
 import LogoHNetflix from '../images/logo-hnetflix.png'
 import { useNavigate } from 'react-router'
+import { ListOfPlanes } from '../components/Public/ListOfPlanes';
 
 export const PublicPage = () => {
 
@@ -24,6 +25,25 @@ export const PublicPage = () => {
                         <button onClick={handleLogin} className='btn btn-primary'>Iniciar Sesión</button>
                     </div>
                 </div>
+
+                <div className='principal-section-project-description'>
+                    <h1>Películas y series ilimitadas y mucho más.</h1>
+                    <p>
+                        Un proyecto del grupo #1 de la clase de Base de Datos II de la Universidad Tecnológica de Honduras.
+                    </p>
+                    <div>
+                        <h3>Estudiantes</h3>
+                        <ul>
+                            <li>Jose Galdamez</li>
+                            <li>Margos Nuñez</li>
+                            <li>Etc...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div className='planes-section-public'>
+                <ListOfPlanes />
             </div>
 
         </div>
