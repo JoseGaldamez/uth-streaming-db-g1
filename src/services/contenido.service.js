@@ -8,7 +8,7 @@ const getAll = async () => {
     return response.data;
 };
 
-const getPeliculas = async (email, password) => {
+const getPeliculas = async () => {
 
     if (contenido.length === 0) {
         await getAll();
@@ -16,7 +16,7 @@ const getPeliculas = async (email, password) => {
     return await contenido.filter((peli) => peli.tipoContenido === "pelicula");
 };
 
-const getSeries = async (nombre, email, password) => {
+const getSeries = async () => {
 
     if (contenido.length === 0) {
         await getAll();
