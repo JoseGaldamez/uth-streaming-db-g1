@@ -35,8 +35,16 @@ export const PublicPage = () => {
                         <h3>Estudiantes</h3>
                         <ul>
                             <li>Jose Galdamez</li>
-                            <li>Margos Nuñez</li>
-                            <li>Etc...</li>
+                            <li>Marcos Nuñez</li>
+                            <li>Diego Moncada</li>
+                            <li>Seidy Pineda</li>
+                            <li>Jenifer Mejía</li>
+                            <li>Kira Ballestero</li>
+                            <li>Luis Ayesta</li>
+                            <li>Victoria Torres</li>
+                            <li>Brayan Ortiz</li>
+                            <li>Darlin Matute</li>
+                            <li>Dennis Amaya</li>
                         </ul>
                     </div>
                 </div>
