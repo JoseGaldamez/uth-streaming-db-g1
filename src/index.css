@@ -301,4 +301,12 @@ hr {
     background-color: #222;
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+.input-enviar-validacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

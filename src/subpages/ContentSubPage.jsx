@@ -3,8 +3,13 @@ import { useParams } from 'react-router';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
+import FormControl from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+
 import { contenidoService } from '../services/contenido.service';
-import { Typography } from '@mui/material';
+import { IconButton, Typography } from '@mui/material';
 import { resenasService } from '../services/resenas.service';
 
 export const ContentSubPage = () => {
@@ -13,11 +18,17 @@ export const ContentSubPage = () => {
 
     const [loading, setLoading] = React.useState(true);
     const [content, setContent] = React.useState({});
+    const [user, setUser] = React.useState({});
+    const [nuevaValidacion, setNuevaValidacion] = React.useState('');
     const [valoraciones, setValoraciones] = React.useState([]);
+
+
 
     useEffect(() => {
         contenidoService.getContentById(contentId).then((content) => {
             setContent(content);
+            const u = JSON.parse(localStorage.getItem('user'));
+            setUser(u);
 
             resenasService.getValoracionByID(contentId).then((valoraciones) => {
                 if (valoraciones.length > 0) {
@@ -31,6 +42,30 @@ export const ContentSubPage = () => {
         });
 
     }, [contentId]);
+
+
+    const handleChangeInput = (e) => {
+        setNuevaValidacion(e.target.value);
+    }
+
+    const handleEnviarValidacion = () => {
+
+        resenasService.createNewComentario(nuevaValidacion, user.idUsuario, contentId).then((res) => {
+            console.log(res);
+
+            if (res.idValoracionc) {
+                resenasService.deleteCurrentValoracion();
+
+                resenasService.getValoracionByID(contentId).then((valoraciones) => {
+                    if (valoraciones.length > 0) {
+                        setValoraciones(valoraciones);
+                    }
+                })
+            }
+
+        });
+
+    }
 
     return (
         <div>
@@ -78,10 +113,10 @@ export const ContentSubPage = () => {
                                     valoraciones.length === 0 ? (
                                         <p>No hay reseñas para este contenido</p>
                                     ) : (
-                                        <div className='valoracion-item'>
+                                        <div>
                                             {
                                                 valoraciones.map((valoracion) => (
-                                                    <div key={valoracion.idValoracionc}>
+                                                    <div key={valoracion.idValoracionc} className='valoracion-item'>
                                                         <p>
                                                             {valoracion.comentario}
                                                         </p>
@@ -94,6 +129,26 @@ export const ContentSubPage = () => {
                                         </div>
                                     )
                                 }
+
+                                <br />
+
+                                <Grid container className='input-enviar-validacion' >
+                                    <Grid item xs={9}>
+                                        <FormControl fullWidth sx={{ m: 1 }} variant="standard">
+                                            <OutlinedInput
+                                                value={nuevaValidacion}
+                                                placeholder="Escribe tu comentario"
+                                                id="standard-adornment-amount"
+                                                onChange={handleChangeInput}
+                                            />
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <Button onClick={handleEnviarValidacion} variant="contained" endIcon={<SendIcon />}>
+                                            Send
+                                        </Button>
+                                    </Grid>
+                                </Grid>
 
                             </Grid>
 
