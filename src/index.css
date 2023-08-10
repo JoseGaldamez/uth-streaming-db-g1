@@ -1,22 +1,22 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: black !important;
 }
 
-li{
+li {
     list-style: none;
 }
 
-.app-bar-top{
+.app-bar-top {
     padding: 0px 30px;
 }
 
-.center-text{
+.center-text {
     text-align: center;
     margin-top: 20px;
     width: 90%;
@@ -28,50 +28,48 @@ li{
     color: red;
 }
 
-.logo-principal{
+.logo-principal {
     cursor: pointer;
     width: 150px;
 }
 
-.logo-principal img{
+.logo-principal img {
     width: 100%;
 }
 
-.list-of-content{
+.list-of-content {
     padding: 30px;
 }
 
-.list-of-content .list-horizontal{
+.list-of-content .list-horizontal {
     display: flex;
     flex-wrap: nowrap;
     justify-content: start;
     overflow-x: auto;
-
 }
 
-.list-of-content-full{
+.list-of-content-full {
     padding: 30px;
 }
 
-.list-of-content-full .list{
+.list-of-content-full .list {
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
     overflow-x: auto;
 }
 
-.list-of-content-full .list .item-card{
+.list-of-content-full .list .item-card {
     margin-right: 20px;
     margin-bottom: 20px;
 }
 
-
-.list-horizontal .item-card{
+.list-horizontal .item-card {
     margin-right: 20px;
     margin-bottom: 20px;
 }
 
-.see-all{
+.see-all {
     text-align: center;
     margin: 65px 20px;
     padding: 30px 0px;
@@ -86,11 +84,11 @@ li{
     cursor: pointer;
 }
 
-.see-all:hover{
+.see-all:hover {
     opacity: 1;
 }
 
-.top-swiper{
+.top-swiper {
     width: 100%;
     max-height: 600px;
     border-radius: 20px;
@@ -98,24 +96,23 @@ li{
     box-sizing: border-box;
 }
 
-.top-swiper .top-image-container{
+.top-swiper .top-image-container {
     border-radius: 20px !important;
     overflow: hidden;
 }
 
-.top-swiper .top-image-container figure{
+.top-swiper .top-image-container figure {
     border-radius: 20px !important;
     overflow: hidden;
     width: calc(100% - 60px);
     max-height: 600px;
 }
 
-.top-swiper .top-image-container figure img{
+.top-swiper .top-image-container figure img {
     width: 100%;
 }
 
-
-.principa-section{
+.principa-section {
     background-image: url(./images/fondo.jpg);
     background-color: black;
     opacity: 0.2;
@@ -129,14 +126,14 @@ li{
     z-index: 0;
 }
 
-.principa-section-content{
+.principa-section-content {
     position: relative;
     z-index: 1;
     width: 100%;
     height: 100vh;
 }
 
-.top-nav{
+.top-nav {
     background-color: rgba(0, 0, 0, 0.3);
     max-height: 150px;
     padding: 20px 50px;
@@ -145,11 +142,11 @@ li{
     align-items: center;
 }
 
-.top-nav img{
+.top-nav img {
     width: 200px;
 }
 
-.top-nav button{
+.top-nav button {
     background-color: red;
     border: none;
     cursor: pointer;
@@ -159,7 +156,7 @@ li{
     border-radius: 10px;
 }
 
-.principal-section-project-description{
+.principal-section-project-description {
     width: 90%;
     max-width: 600px;
     margin: 0px auto;
@@ -167,36 +164,36 @@ li{
     padding-top: 15vh;
 }
 
-.principal-section-project-description h1{
+.principal-section-project-description h1 {
     color: white;
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
-.principal-section-project-description h3{
+.principal-section-project-description h3 {
     color: white;
     margin: 30px;
     text-decoration: underline;
 }
 
-.planes-section-public{
+.planes-section-public {
     width: 100%;
     height: 100vh;
 }
 
-.planes{
+.planes {
     padding-top: 100px;
     text-align: center;
 }
 
-.planes .list-of-planes{
+.planes .list-of-planes {
     display: flex;
     width: 100%;
     padding-top: 100px;
     justify-content: center;
 }
 
-.container-item-plan{
+.container-item-plan {
     background-color: #222;
     max-width: 250px;
     width: 250px;
@@ -205,54 +202,54 @@ li{
     overflow: hidden;
 }
 
-.container-item-plan .plan-title{
+.container-item-plan .plan-title {
     padding: 50px 0px;
 }
 
-.container-item-plan:nth-child(1) .plan-title{
+.container-item-plan:nth-child(1) .plan-title {
     background-color: #911919;
 }
 
-.container-item-plan:nth-child(2) .plan-title{
+.container-item-plan:nth-child(2) .plan-title {
     background-color: #1b6e1b;
 }
 
-.container-item-plan:nth-child(3) .plan-title{
+.container-item-plan:nth-child(3) .plan-title {
     background-color: #191991;
 }
 
-.plan-description{
+.plan-description {
     padding: 30px 10px;
     color: white;
     text-transform: uppercase;
 }
 
-.plan-description h4{
+.plan-description h4 {
     color: #999;
     margin-bottom: 10px;
 }
 
-.plan-precio{
+.plan-precio {
     padding: 30px 0px;
     color: white;
     text-transform: uppercase;
 }
 
-.plan-precio h4{
+.plan-precio h4 {
     color: #999;
     padding: 10px;
     margin-bottom: 20px;
     background-color: #000;
 }
 
-.plan-precio p{
+.plan-precio p {
     color: #999;
     margin-bottom: 10px;
     font-size: 2rem;
     font-weight: bolder;
 }
 
-.plan-button{
+.plan-button {
     padding: 10px 0px;
     width: 90%;
     margin: 20px auto;
@@ -266,8 +263,42 @@ li{
     transition: all 0.5s ease;
 }
 
-.plan-button:hover{
+.plan-button:hover {
     background-color: white;
     color: red;
     font-weight: bolder;
+}
+
+.content-page {
+    margin-top: 50px;
+}
+
+.image-content figure {
+    width: 100%;
+    overflow: hidden;
+}
+.image-content figure img {
+    width: 100%;
+}
+
+.clasificacion {
+    font-size: 0.8rem;
+    color: #999;
+}
+.content-page-body {
+    margin-bottom: 50px;
+}
+
+hr {
+    border: solid 1px #333;
+}
+
+.content-page-resenas {
+    padding: 50px 20px;
+}
+
+.valoracion-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
 }
