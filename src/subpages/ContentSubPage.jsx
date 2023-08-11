@@ -11,6 +11,7 @@ import SendIcon from '@mui/icons-material/Send';
 import { contenidoService } from '../services/contenido.service';
 import { IconButton, Typography } from '@mui/material';
 import { resenasService } from '../services/resenas.service';
+import { UserValoracion } from '../components/ListOfContent/UserValoracion';
 
 export const ContentSubPage = () => {
 
@@ -25,6 +26,9 @@ export const ContentSubPage = () => {
 
 
     useEffect(() => {
+
+        window.scrollTo(0, 0);
+
         contenidoService.getContentById(contentId).then((content) => {
             setContent(content);
             const u = JSON.parse(localStorage.getItem('user'));
@@ -51,20 +55,27 @@ export const ContentSubPage = () => {
     const handleEnviarValidacion = () => {
 
         resenasService.createNewComentario(nuevaValidacion, user.idUsuario, contentId).then((res) => {
-            console.log(res);
 
             if (res.idValoracionc) {
                 resenasService.deleteCurrentValoracion();
 
-                resenasService.getValoracionByID(contentId).then((valoraciones) => {
-                    if (valoraciones.length > 0) {
-                        setValoraciones(valoraciones);
+                resenasService.getValoracionByID(contentId).then((newValoraciones) => {
+                    if (newValoraciones.length > 0) {
+                        setValoraciones(newValoraciones);
+                        setNuevaValidacion('');
                     }
                 })
             }
 
         });
 
+    }
+
+    const handleDeleteComment = (id) => {
+        resenasService.deleteCommentByID(id).then((res) => {
+            const filteredValoraciones = valoraciones.filter((valoracion) => valoracion.idValoracionc !== id);
+            setValoraciones(filteredValoraciones);
+        });
     }
 
     return (
@@ -79,11 +90,11 @@ export const ContentSubPage = () => {
                         <Grid container spacing={2} className='content-page-body'>
                             <Grid item xs={6} className='image-content'>
                                 <figure>
-                                    <img src={"https://www.codigocorrecto.com/wp-content/uploads/2023/hnetflix/content-picture/" + content.idContenido + ".jpg"} alt={content.titulo} />
+                                    <img src={content.urlImage} alt={content.titulo} />
                                 </figure>
                             </Grid>
                             <Grid item xs={6}>
-                                <h1>{content.titulo} <span className='clasificacion'> {content.calificaciones} </span> </h1>
+                                <h1>{content.titulo} <span className='clasificacion'> Score: {content.calificaciones} </span> </h1>
                                 <p>{content.descripcion}</p>
                                 <br />
                                 <p>
@@ -96,6 +107,12 @@ export const ContentSubPage = () => {
                                     <strong>Director:</strong> {content.director}
                                 </p>
                             </Grid>
+                        </Grid>
+
+                        <hr />
+
+                        <Grid container className='content-page-resenas-video'>
+                            <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + content.urlVideo.split('?v=')[1]} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         </Grid>
 
                         <hr />
@@ -117,11 +134,21 @@ export const ContentSubPage = () => {
                                             {
                                                 valoraciones.map((valoracion) => (
                                                     <div key={valoracion.idValoracionc} className='valoracion-item'>
+
+                                                        <UserValoracion userId={valoracion.idUsuario} handleDeleteComment={() => {
+                                                            handleDeleteComment(valoracion.idValoracionc);
+                                                        }} />
+
                                                         <p>
                                                             {valoracion.comentario}
                                                         </p>
                                                         <p>
-                                                            <strong>Fecha: </strong> {valoracion.fechaComentario.split('T')[0]}
+                                                            <span>
+                                                                <strong>Fecha: </strong> {valoracion.fechaComentario.split('T')[0]}
+                                                            </span>
+                                                            <span>
+                                                                <strong>Calificación: </strong> {valoracion.valoracion}
+                                                            </span>
                                                         </p>
                                                     </div>
                                                 ))

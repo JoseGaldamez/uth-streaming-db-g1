@@ -4,6 +4,10 @@ const getAll = async () => {
     return await http.get("/Usuarios");
 };
 
+const getUserByID = async (id) => {
+    return await http.get("/Usuarios/" + id);
+};
+
 const login = async (email, password) => {
 
     try {
@@ -41,5 +45,6 @@ const register = async (nombre, email, password) => {
 export const userService = {
     getAll,
     login,
-    register
+    register,
+    getUserByID
 }

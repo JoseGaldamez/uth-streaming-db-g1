@@ -51,7 +51,7 @@ export const HomeSubPage = () => {
                                 top.map((item, index) => (
                                     <SwiperSlide key={index} className='top-image-container'>
                                         <figure>
-                                            <img className='top-image' src={"https://www.codigocorrecto.com/wp-content/uploads/2023/hnetflix/content-picture/" + item.idContenido + ".jpg"} alt={item.titulo} />
+                                            <img className='top-image' src={item.urlImage} alt={item.titulo} />
                                         </figure>
 
                                     </SwiperSlide>
@@ -63,7 +63,9 @@ export const HomeSubPage = () => {
                         <MoviesList listOfMovies={series} title="Series" />
                     </div>
 
-                ) : (<CircularProgress color="error" />)
+                ) : (<div className='loading-home'>
+                    <CircularProgress color="error" />
+                </div>)
             }
 
         </div>

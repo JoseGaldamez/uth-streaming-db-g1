@@ -8,6 +8,15 @@ const getAll = async () => {
     return response.data;
 };
 
+const deleteCommentByID = async (id) => {
+    const response = await http.post("/Valoracion/" + id);
+
+    const filteredValoraciones = valoraciones.filter((valoracion) => valoracion.idValoracionc != id);
+    valoraciones = filteredValoraciones;
+
+    return response.data;
+};
+
 const createNewComentario = async (comentario, idUsario, idContenido) => {
 
     const body = {
@@ -40,5 +49,6 @@ export const resenasService = {
     getAll,
     deleteCurrentValoracion,
     getValoracionByID,
-    createNewComentario
+    createNewComentario,
+    deleteCommentByID
 }

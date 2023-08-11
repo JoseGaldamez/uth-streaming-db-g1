@@ -22,7 +22,7 @@ export const MovieItem = ({ movie }) => {
                 <CardMedia
                     component="img"
                     height="140"
-                    image={"https://www.codigocorrecto.com/wp-content/uploads/2023/hnetflix/content-picture/" + movie.idContenido + ".jpg"}
+                    image={movie.urlImage}
                     alt="green iguana"
                 />
                 <CardContent>
